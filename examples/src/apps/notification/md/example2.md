@@ -1,54 +1,54 @@
 ```javascript
-import React,{Component} from 'react'
-import { Notification, Button  } from 'mk-component'
+import React, { Component } from 'react'
+import { Notification, Button } from 'mk-component'
 
 export default class Example1 extends Component {
 
-	openSuccess(){
+	openSuccess() {
 		Notification.success({
-		    message: 'success',
-		    description: 'success',
-	  	})
+			message: 'success',
+			description: 'success',
+		})
 	}
 
-	async openInfo(){
+	async openInfo() {
 		//使用await调用，返回true表示关闭
-		if( await Notification.info({
-		    message: 'info',
-		    description: 'info',
-	  	})){
+		if (await Notification.info({
+			message: 'info',
+			description: 'info',
+		})) {
 			console.log('close')
-	  	}
+		}
 	}
 
-	openWarning(){
+	openWarning() {
 		Notification.warning({
-		    message: 'warning',
-		    description: 'warning',
-	  	})
+			message: 'warning',
+			description: 'warning',
+		})
 	}
 
-	openError(){
+	openError() {
 		Notification.error({
-		    message: 'error',
-		    description: 'error',
-	  	})
+			message: 'error',
+			description: 'error',
+		})
 	}
 
 	render() {
 		return (
 			<div>
-		 		<Button onClick={this.openSuccess}>Success</Button>
-		 		<br/>
-		 		<br/>
-    			<Button onClick={this.openInfo}>Info</Button>
-    			<br/>
-		 		<br/>
-    			<Button onClick={this.openWarning}>Warning</Button>
-    			<br/>
-		 		<br/>
-    			<Button onClick={this.openError}>Error</Button>
-		  	</div>
+				<Button onClick={this.openSuccess}>Success</Button>
+				<br />
+				<br />
+				<Button onClick={this.openInfo}>Info</Button>
+				<br />
+				<br />
+				<Button onClick={this.openWarning}>Warning</Button>
+				<br />
+				<br />
+				<Button onClick={this.openError}>Error</Button>
+			</div>
 		)
 	}
 }

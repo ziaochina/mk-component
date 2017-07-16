@@ -17,7 +17,7 @@ export default class RootComponent extends Component {
 	}
 
 	handleGithubClick = () => {
-		window.open("https://github.com/ziaochina/mk-component/tree/master")
+		window.open("https://github.com/ziaochina/mk-component")
 	}
 
 	render() {

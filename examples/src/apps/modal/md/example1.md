@@ -1,25 +1,25 @@
 ```javascript
-import React,{Component} from 'react'
-import { Modal, Button  } from 'mk-component'
+import React, { Component } from 'react'
+import { Modal, Button } from 'mk-component'
 
 export default class Example1 extends Component {
 
-	showModal(){
-		Modal.show( {
-			title:"Basic Modal",
-			children:(<div><p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p></div>)
+	showModal = () => {
+		Modal.show({
+			title: "Basic Modal",
+			children: (<div><p>Some contents...</p>
+				<p>Some contents...</p>
+				<p>Some contents...</p></div>)
 		})
 	}
 
-	async showModal1(){
+	showModal1 = async () => {
 		//ok:true, cancel:false
-		let ret = await Modal.show( {
-			title:"Basic Modal",
-			children:(<div><p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p></div>)
+		let ret = await Modal.show({
+			title: "Basic Modal",
+			children: (<div><p>Some contents...</p>
+				<p>Some contents...</p>
+				<p>Some contents...</p></div>)
 		})
 
 		console.log(ret)
@@ -28,11 +28,11 @@ export default class Example1 extends Component {
 	render() {
 		return (
 			<div>
-		 		<Button onClick={::this.showModal}>Modal</Button>
-		 		<br />
-		 		<br />
-		 		<Button onClick={::this.showModal1}>需要知道是否点击的OK</Button>
-		  	</div>
+				<Button onClick={this.showModal}>Modal</Button>
+				<br />
+				<br />
+				<Button onClick={this.showModal1}>需要知道是否点击的OK</Button >
+			</div >
 		)
 	}
 }

@@ -14,18 +14,18 @@ export default class Example1 extends Component {
 
 	}
 
-	handleChange(value) {
+	handleChange = (value) => {
 		console.log(`selected ${value}`);
 	}
 
-	handleAddInputChange(e) {
+	handleAddInputChange = (e) => {
 		this.setState({ inputValue: e.target.value })
 	}
 
-	async handleAdd() {
+	handleAdd = async () => {
 		if (await Modal.show({
 			title: "新增",
-			children: (<div><Input value={this.state.inputValue} onChange={::this.handleAddInputChange} /></div>)
+			children: (<div><Input value={this.state.inputValue} onChange={this.handleAddInputChange} /></div>)
 		})) {
 			let items = this.state.items
 			items.push(this.state.inputValue)
@@ -43,13 +43,13 @@ export default class Example1 extends Component {
 				<Select
 					style={{ width: 120 }}
 					onChange={this.handleChange}
-					dropdownFooter={<Button style={{ width: "100%" }} type="primary" onClick={::this.handleAdd}>新增</Button> }
-	enableHideDropdownByClick = { true}>
-	{
-		this.state.items.map(i => <Option key={i}>{i}</Option>)
-	}
-			    </Select>
-		  	</div>
+					dropdownFooter={<Button style={{ width: "100%" }} type="primary" onClick={this.handleAdd}>新增</Button>}
+					enableHideDropdownByClick={true}>
+					{
+						this.state.items.map(i => <Option key={i}>{i}</Option>)
+					}
+				</Select>
+			</div>
 		)
-}
+	}
 }
