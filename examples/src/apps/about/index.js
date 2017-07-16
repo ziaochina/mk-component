@@ -1,12 +1,8 @@
-import React,{Component} from 'react'
-import aboutMd from './md/about.md'
-import Markdown from '../../components/markdown'
-export default class About extends Component{
-	render(){
-		return (
-			<div>
-				{Markdown({content:aboutMd})}
-			</div>
-		)
+module.exports = {
+	name: 'about',
+	load: (cb) => {
+		require.ensure([], require => {
+			cb(require('./component'))
+		}, 'about')
 	}
 }

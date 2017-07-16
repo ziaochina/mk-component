@@ -12,10 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "marked": "^0.3.6",
+    "mk-app-loader": "^1.0.3",
+    "mk-component": "^1.0.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "mk-app-loader": "^1.0.0",
-    "mk-component": "^0.1.150"
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -35,7 +35,7 @@
     "less-loader": "^4.0.4",
     "markdown-loader": "^2.0.0",
     "style-loader": "^0.18.1",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.5.0"
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
   }
 }

@@ -1,5 +1,5 @@
-import React,{Component} from 'react'
-import { Table,Icon  } from 'mk-component'
+import React, { Component } from 'react'
+import { Table, Icon } from 'mk-component'
 
 const columns = [{
   title: 'Name',
@@ -48,11 +48,11 @@ const data = [{
 }]
 
 export default class Example1 extends Component {
-	render() {
-		return (
-			<div>
-		 		<Table bordered columns={columns} dataSource={data} />
-		  	</div>
-		)
-	}
+  render() {
+    return (
+      <div>
+        <Table bordered columns={columns} dataSource={data} />
+      </div>
+    )
+  }
 }

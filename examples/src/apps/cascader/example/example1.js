@@ -1,5 +1,5 @@
-import React,{Component} from 'react'
-import { Cascader  } from 'mk-component'
+import React, { Component } from 'react'
+import { Cascader } from 'mk-component'
 
 const options = [{
   value: 'zhejiang',
@@ -27,15 +27,15 @@ const options = [{
 
 export default class Example1 extends Component {
 
-	handleChange(value){
-		console.log(value)
-	}
+  handleChange(value) {
+    console.log(value)
+  }
 
-	render() {
-		return (
-			<div>
-		 		<Cascader style={{width:300}} options={options} onChange={this.handleChange} placeholder="Please select" />
-		  	</div>
-		)
-	}
+  render() {
+    return (
+      <div>
+        <Cascader style={{ width: 300 }} options={options} onChange={this.handleChange} placeholder="Please select" />
+      </div>
+    )
+  }
 }

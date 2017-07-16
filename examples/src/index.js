@@ -1,110 +1,110 @@
-import {
-	config,
-	start
-} from 'mk-app-loader'
-
+import { config, start } from 'mk-app-loader'
 import './assets/style/index.less'
 import './assets/style/markdown.css'
 import './assets/style/hljs.css'
 
-import _src_apps_about from './apps/about/index.app'
-import _src_apps_affix from './apps/affix/index.app'
-import _src_apps_alert from './apps/alert/index.app'
-import _src_apps_anchor from './apps/anchor/index.app'
-import _src_apps_backTop from './apps/backTop/index.app'
-import _src_apps_badge from './apps/badge/index.app'
-import _src_apps_breadcrumb from './apps/breadcrumb/index.app'
-import _src_apps_button from './apps/button/index.app'
-import _src_apps_card from './apps/card/index.app'
-import _src_apps_carousel from './apps/carousel/index.app'
-import _src_apps_cascader from './apps/cascader/index.app'
-import _src_apps_checkbox from './apps/checkbox/index.app'
-import _src_apps_collapse from './apps/collapse/index.app'
-import _src_apps_datagrid from './apps/datagrid/index.app'
-import _src_apps_datePicker from './apps/datePicker/index.app'
-import _src_apps_dropdown from './apps/dropdown/index.app'
-import _src_apps_echarts from './apps/echarts/index.app'
-import _src_apps_form from './apps/form/index.app'
-import _src_apps_icon from './apps/icon/index.app'
-import _src_apps_input from './apps/input/index.app'
-import _src_apps_layout from './apps/layout/index.app'
-import _src_apps_link from './apps/link/index.app'
-import _src_apps_menu from './apps/menu/index.app'
-import _src_apps_modal from './apps/modal/index.app'
-import _src_apps_notification from './apps/notification/index.app'
-import _src_apps_pagination from './apps/pagination/index.app'
-import _src_apps_popconfirm from './apps/popconfirm/index.app'
-import _src_apps_popover from './apps/popover/index.app'
-import _src_apps_progress from './apps/progress/index.app'
-import _src_apps_radio from './apps/radio/index.app'
-import _src_apps_rate from './apps/rate/index.app'
-import _src_apps_root from './apps/root/index.app'
-import _src_apps_select from './apps/select/index.app'
-import _src_apps_slider from './apps/slider/index.app'
-import _src_apps_spin from './apps/spin/index.app'
-import _src_apps_start from './apps/start/index.app'
-import _src_apps_steps from './apps/steps/index.app'
-import _src_apps_switch from './apps/switch/index.app'
-import _src_apps_table from './apps/table/index.app'
-import _src_apps_tabs from './apps/tabs/index.app'
-import _src_apps_timeline from './apps/timeline/index.app'
-import _src_apps_toast from './apps/toast/index.app'
-import _src_apps_tooltip from './apps/tooltip/index.app'
-import _src_apps_transfer from './apps/transfer/index.app'
-import _src_apps_tree from './apps/tree/index.app'
-import _src_apps_treeSelect from './apps/treeSelect/index.app'
-import _src_apps_upload from './apps/upload/index.app'
+import about from './apps/about/index.js'
+import affix from './apps/affix/index.js'
+import alert from './apps/alert/index.js'
+import anchor from './apps/anchor/index.js'
+import backTop from './apps/backTop/index.js'
+import badge from './apps/badge/index.js'
+import breadcrumb from './apps/breadcrumb/index.js'
+import button from './apps/button/index.js'
+import card from './apps/card/index.js'
+import carousel from './apps/carousel/index.js'
+import cascader from './apps/cascader/index.js'
+import checkbox from './apps/checkbox/index.js'
+import collapse from './apps/collapse/index.js'
+import datagrid from './apps/datagrid/index.js'
+import datePicker from './apps/datePicker/index.js'
+import dropdown from './apps/dropdown/index.js'
+import echarts from './apps/echarts/index.js'
+import form from './apps/form/index.js'
+import icon from './apps/icon/index.js'
+import input from './apps/input/index.js'
+import layout from './apps/layout/index.js'
+import link from './apps/link/index.js'
+import menu from './apps/menu/index.js'
+import modal from './apps/modal/index.js'
+import notification from './apps/notification/index.js'
+import pagination from './apps/pagination/index.js'
+import popconfirm from './apps/popconfirm/index.js'
+import popover from './apps/popover/index.js'
+import progress from './apps/progress/index.js'
+import radio from './apps/radio/index.js'
+import rate from './apps/rate/index.js'
+import root from './apps/root/index.js'
+import select from './apps/select/index.js'
+import slider from './apps/slider/index.js'
+import spin from './apps/spin/index.js'
+import _start from './apps/start/index.js'
+import steps from './apps/steps/index.js'
+import _switch from './apps/switch/index.js'
+import table from './apps/table/index.js'
+import tabs from './apps/tabs/index.js'
+import timeline from './apps/timeline/index.js'
+import toast from './apps/toast/index.js'
+import tooltip from './apps/tooltip/index.js'
+import transfer from './apps/transfer/index.js'
+import tree from './apps/tree/index.js'
+import treeSelect from './apps/treeSelect/index.js'
+import upload from './apps/upload/index.js'
+
+const apps = {
+	[about.name]:about,	
+	[affix.name]:affix,	
+	[alert.name]:alert,	
+	[anchor.name]:anchor,	
+	[backTop.name]:backTop,	
+	[badge.name]:badge,	
+	[breadcrumb.name]:breadcrumb,	
+	[button.name]:button,	
+	[card.name]:card,	
+	[carousel.name]:carousel,	
+	[cascader.name]:cascader,	
+	[checkbox.name]:checkbox,	
+	[collapse.name]:collapse,	
+	[datagrid.name]:datagrid,	
+	[datePicker.name]:datePicker,	
+	[dropdown.name]:dropdown,	
+	[echarts.name]:echarts,	
+	[form.name]:form,	
+	[icon.name]:icon,	
+	[input.name]:input,	
+	[layout.name]:layout,	
+	[link.name]:link,	
+	[menu.name]:menu,	
+	[modal.name]:modal,	
+	[notification.name]:notification,	
+	[pagination.name]:pagination,	
+	[popconfirm.name]:popconfirm,	
+	[popover.name]:popover,	
+	[progress.name]:progress,	
+	[radio.name]:radio,	
+	[rate.name]:rate,	
+	[root.name]:root,	
+	[select.name]:select,	
+	[slider.name]:slider,	
+	[spin.name]:spin,	
+	[_start.name]:_start,	
+	[steps.name]:steps,	
+	[_switch.name]:_switch,	
+	[table.name]:table,	
+	[tabs.name]:tabs,	
+	[timeline.name]:timeline,	
+	[toast.name]:toast,	
+	[tooltip.name]:tooltip,	
+	[transfer.name]:transfer,	
+	[tree.name]:tree,	
+	[treeSelect.name]:treeSelect,	
+	[upload.name]:upload,	
+}
 
 config({
-	apps: {
-		[_src_apps_about.name]: _src_apps_about,
-		[_src_apps_affix.name]: _src_apps_affix,
-		[_src_apps_alert.name]: _src_apps_alert,
-		[_src_apps_anchor.name]: _src_apps_anchor,
-		[_src_apps_backTop.name]: _src_apps_backTop,
-		[_src_apps_badge.name]: _src_apps_badge,
-		[_src_apps_breadcrumb.name]: _src_apps_breadcrumb,
-		[_src_apps_button.name]: _src_apps_button,
-		[_src_apps_card.name]: _src_apps_card,
-		[_src_apps_carousel.name]: _src_apps_carousel,
-		[_src_apps_cascader.name]: _src_apps_cascader,
-		[_src_apps_checkbox.name]: _src_apps_checkbox,
-		[_src_apps_collapse.name]: _src_apps_collapse,
-		[_src_apps_datagrid.name]: _src_apps_datagrid,
-		[_src_apps_datePicker.name]: _src_apps_datePicker,
-		[_src_apps_dropdown.name]: _src_apps_dropdown,
-		[_src_apps_echarts.name]: _src_apps_echarts,
-		[_src_apps_form.name]: _src_apps_form,
-		[_src_apps_icon.name]: _src_apps_icon,
-		[_src_apps_input.name]: _src_apps_input,
-		[_src_apps_layout.name]: _src_apps_layout,
-		[_src_apps_link.name]: _src_apps_link,
-		[_src_apps_menu.name]: _src_apps_menu,
-		[_src_apps_modal.name]: _src_apps_modal,
-		[_src_apps_notification.name]: _src_apps_notification,
-		[_src_apps_pagination.name]: _src_apps_pagination,
-		[_src_apps_popconfirm.name]: _src_apps_popconfirm,
-		[_src_apps_popover.name]: _src_apps_popover,
-		[_src_apps_progress.name]: _src_apps_progress,
-		[_src_apps_radio.name]: _src_apps_radio,
-		[_src_apps_rate.name]: _src_apps_rate,
-		[_src_apps_root.name]: _src_apps_root,
-		[_src_apps_select.name]: _src_apps_select,
-		[_src_apps_slider.name]: _src_apps_slider,
-		[_src_apps_spin.name]: _src_apps_spin,
-		[_src_apps_start.name]: _src_apps_start,
-		[_src_apps_steps.name]: _src_apps_steps,
-		[_src_apps_switch.name]: _src_apps_switch,
-		[_src_apps_table.name]: _src_apps_table,
-		[_src_apps_tabs.name]: _src_apps_tabs,
-		[_src_apps_timeline.name]: _src_apps_timeline,
-		[_src_apps_toast.name]: _src_apps_toast,
-		[_src_apps_tooltip.name]: _src_apps_tooltip,
-		[_src_apps_transfer.name]: _src_apps_transfer,
-		[_src_apps_tree.name]: _src_apps_tree,
-		[_src_apps_treeSelect.name]: _src_apps_treeSelect,
-		[_src_apps_upload.name]: _src_apps_upload
-	}
+	apps,
+	targetDomId: 'app',
+	startAppName: 'root'
 })
 
-start('app', null, 'apps/root')
+start()
