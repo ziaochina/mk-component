@@ -11,23 +11,16 @@ class ModalComponent extends Component {
 	state = {
 	}
 
-	constructor(props) {
-		super(props)
-		this.setOkListener = this.setOkListener.bind(this)
-		this.setCancelListener = this.setCancelListener.bind(this)
-	}
-
-
-	setOkListener(cb) {
+	setOkListener = (cb) => {
 		this.setState({ okListener: cb })
 	}
 
-	setCancelListener(cb) {
+	setCancelListener = (cb) => {
 		this.setState({ cancelListener: cb })
 	}
 
 
-	async handleOk() {
+	handleOk = async () => {
 		let listener = this.state.okListener, ret
 
 		if (listener) {
@@ -40,7 +33,7 @@ class ModalComponent extends Component {
 		this.props.onOk && this.props.onOk(ret)
 	}
 
-	async handleCancel() {
+	handleCancel = async () => {
 		let listener = this.state.cancelListener, ret
 
 		if (listener) {
@@ -60,11 +53,13 @@ class ModalComponent extends Component {
 			<Modal
 				visible
 				{...this.props}
-				onOk={::this.handleOk}
-	onCancel = {::this.handleCancel }
-	/>
- 		)
-}
+				onOk={this.handleOk}
+				onCancel={this.handleCancel}
+				setOkListener={this.setOkListener}
+				setCancelLister={this.cancelListener}
+			/>
+		)
+	}
 }
 
 ModalComponent.newInstance = (props) => {
