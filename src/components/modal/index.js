@@ -47,16 +47,19 @@ class ModalComponent extends Component {
 	}
 
 	render() {
-		let { children, ...otherProps } = this.props
-
+		var { children, ...otherProps } = this.props
+		children = React.cloneElement(children, {
+			setOkListener: this.setOkListener,
+			setCancelLister: this.setCancelListener
+		})
+		
 		return (
 			<Modal
 				visible
-				{...this.props}
+				{...otherProps}
+				children={children}
 				onOk={this.handleOk}
 				onCancel={this.handleCancel}
-				setOkListener={this.setOkListener}
-				setCancelLister={this.cancelListener}
 			/>
 		)
 	}
