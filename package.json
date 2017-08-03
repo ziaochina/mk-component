@@ -1,11 +1,11 @@
 {
   "name": "mk-component",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "./lib/index",
   "scripts": {
-    "build": "export NODE_ENV=production && webpack --output-filename mk-component.js",
-    "build-min": "export NODE_ENV=production COMPRESS=1 && webpack --output-filename mk-component.min.js",
+    "build": "cross-env NODE_ENV=production  webpack --output-filename mk-component.js",
+    "build-min": "cross-env NODE_ENV=production COMPRESS=1 webpack --output-filename mk-component.min.js",
     "compile": "babel -d lib/ src/",
     "commit": "git add . && git commit -m 'zlj' &&  git push -u origin master",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,6 +33,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.2",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.1",
