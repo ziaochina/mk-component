@@ -31,7 +31,7 @@ plugins.push(new HtmlWebpackPlugin({
 }))
 
 module.exports = {
-    //devtool: 'source-map',
+    devtool: 'source-map',
     entry:{
         bundle: ["./src/index.js"],
         vendor: ["react", 'react-dom', 'mk-app-loader', 'mk-component', 'marked']
