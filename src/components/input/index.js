@@ -43,5 +43,6 @@ InputComponent.Group = Input.Group
 InputComponent.Number = InputNumber
 InputComponent.TextArea = Input.TextArea
 
+
 export default InputComponent
 
