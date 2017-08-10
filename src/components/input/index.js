@@ -41,6 +41,7 @@ class InputComponent extends React.Component {
 InputComponent.Search = Input.Search
 InputComponent.Group = Input.Group
 InputComponent.Number = InputNumber
+InputComponent.TextArea = Input.TextArea
 
 export default InputComponent
 

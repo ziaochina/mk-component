@@ -53,6 +53,7 @@ export default function GridComponent(props) {
 	return (
 		<Table
 			key={key}
+			ref={o => this.refGrid = o}
 			rowsCount={rowsCount}
 			headerHeight={headerHeight}
 			rowHeight={rowHeight}
@@ -67,8 +68,14 @@ export default function GridComponent(props) {
 			onRowMouseEnter={readonly === false ? undefined : onRowMouseEnter}
 			onRowMouseLeave={readonly === false ? undefined : onRowMouseLeave}
 			scrollEnd={onScrollEnd}
+			onMouseUp={handleMouseUp}
 		>
 			{columns}
 		</Table>
 	)
+}
+
+const handleMouseUp = (e) =>{
+	console.log(e)
+	debugger
 }
