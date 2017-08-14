@@ -177,7 +177,7 @@ export default class InputNumberComponent extends Component {
         let value = this.state.value
 
         //最后一个字符是.或者-那么去掉
-        if (value.charAt(value.length - 1) === '.' || value === '-') {
+        if (value && (value.charAt(value.length - 1) === '.' || value === '-')) {
             value = value.slice(0, -1)
             value = this.getCurrentValidValue(value)
             this.setState({ value: value + '' })
