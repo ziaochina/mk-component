@@ -62,6 +62,8 @@ class DataGridComponent extends React.Component {
 
     onResize() {
         this.refreshSize()
+        if(this.props.onResize)
+            setTimeout(this.props.onResize, 16)
     }
 
     refreshSize() {
