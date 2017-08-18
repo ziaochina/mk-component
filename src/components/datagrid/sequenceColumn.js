@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Column, Cell } from 'fixed-data-table'
+import { Table, Column, Cell } from 'mk-data-table'
 import Icon from '../icon'
 
 export default function SequenceColumn(props) {

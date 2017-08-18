@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Cell } from 'fixed-data-table'
+import { Cell } from 'mk-data-table'
 import classNames from 'classnames'
 
 

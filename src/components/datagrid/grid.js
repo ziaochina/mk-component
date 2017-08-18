@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
 	Table
-} from 'fixed-data-table'
+} from 'mk-data-table'
 import SequenceColumn from './sequenceColumn'
 
 export default function GridComponent(props) {
