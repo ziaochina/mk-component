@@ -53,15 +53,15 @@ export default function GridComponent(props) {
 	return (
 		<Table
 			key={key}
-			rowsCount={rowsCount}
+			rowsCount={(height == 0 || width == 0) ? 0 : rowsCount}
 			headerHeight={headerHeight}
 			rowHeight={rowHeight}
 			groupHeaderHeight={groupHeaderHeight}
 			footerHeight={footerHeight}
 			width={width}
 			height={height}
-			scrollToRow={scrollToRow}
-			scrollToColumn={scrollToColumn}
+			scrollToRow={(height != 0 && width != 0) ? scrollToRow : undefined}
+			scrollToColumn={(height != 0 && width != 0) ? scrollToColumn : undefined}
 			onRowDoubleClick={readonly === false ? undefined : onRowDoubleClick}
 			onRowClick={readonly === false ? undefined : onRowClick}
 			onRowMouseEnter={readonly === false ? undefined : onRowMouseEnter}
