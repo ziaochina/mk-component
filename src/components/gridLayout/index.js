@@ -1,5 +1,6 @@
 import GridLayout from 'react-grid-layout'
 import Widget from './widget'
+import classNames from 'classnames'
 const { WidthProvider, Responsive } = GridLayout
 
 
