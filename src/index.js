@@ -43,6 +43,7 @@ import EchartsComponent from './components/echarts'
 import DataGridComponent from './components/datagrid'
 import TableComponent from './components/table'
 import FormComponent from './components/form'
+import GridLayoutComponent from './components/gridLayout'
 
 export const Menu = MenuComponent
 export const Icon = IconComponent
@@ -89,3 +90,4 @@ export const Echarts = EchartsComponent
 export const DataGrid = DataGridComponent
 export const Table = TableComponent
 export const Form = FormComponent
+export const GridLayout = GridLayoutComponent
