@@ -44,6 +44,7 @@ import DataGridComponent from './components/datagrid'
 import TableComponent from './components/table'
 import FormComponent from './components/form'
 import GridLayoutComponent from './components/gridLayout'
+import JSONTreeComponent from './components/jsonTree'
 
 export const Menu = MenuComponent
 export const Icon = IconComponent
@@ -91,3 +92,4 @@ export const DataGrid = DataGridComponent
 export const Table = TableComponent
 export const Form = FormComponent
 export const GridLayout = GridLayoutComponent
+export const JSONTree = JSONTreeComponent

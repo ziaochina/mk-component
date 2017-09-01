@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "",
   "main": "./lib/index",
   "scripts": {
@@ -21,6 +21,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-grid-layout": "^0.15.0",
+    "react-json-tree": "^0.10.9",
     "ziaochina-rc-select": "^0.1.0"
   },
   "devDependencies": {
