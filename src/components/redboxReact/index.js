@@ -56,11 +56,24 @@ function RedBoxErrorComponent(props) {
 	})
 
 	var style = STYLE
+	var error = {}
+	if (!props.error) {
+		error.stack = ''
+	}
+	if (typeof props.error == 'string') {
+		error.stack = props.error
+	} else if (!props.error.stack && props.error.message) {
+		error.stack = props.error.message
+	}
+	else {
+		error = props.error
+	}
+
 	if (props.style) {
 		style = { ...style, ...props.style }
 	}
 
-	return <RedBoxError {...props} className={className} style={style} />
+	return <RedBoxError {...props} className={className} style={style} error={error} key={new Date().getTime()} />
 }
 
 RedboxReactComponent.RedBoxError = RedBoxErrorComponent
