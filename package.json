@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "",
   "main": "./lib/index",
   "scripts": {
@@ -13,22 +13,22 @@
   "author": "liujian zhang",
   "license": "MIT",
   "dependencies": {
-    "antd": "^2.12.6",
+    "antd": "^2.13.0",
     "classnames": "^2.2.5",
     "echarts-for-react": "^1.4.3",
     "mk-data-table": "^0.6.4",
+    "mk-redbox-react": "^1.0.0",
     "omit.js": "^0.1.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-grid-layout": "^0.15.0",
+    "react-grid-layout": "^0.15.2",
     "react-json-tree": "^0.10.9",
-    "redbox-react": "^1.5.0",
     "ziaochina-rc-select": "^0.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.0.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-import": "^1.4.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -37,7 +37,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.5",
-    "css-loader": "^0.28.5",
+    "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.1",
     "html-loader": "^0.4.5",

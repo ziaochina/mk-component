@@ -1,5 +1,5 @@
 import React from 'react'
-import RedBox, { RedBoxError } from 'redbox-react'
+import RedBox, { RedBoxError } from 'mk-redbox-react'
 import classNames from 'classnames'
 
 const STYLE = {
@@ -73,7 +73,7 @@ function RedBoxErrorComponent(props) {
 		style = { ...style, ...props.style }
 	}
 
-	return <RedBoxError {...props} className={className} style={style} error={error} key={new Date().getTime()} />
+	return <RedBoxError {...props} className={className} style={style} error={error} />
 }
 
 RedboxReactComponent.RedBoxError = RedBoxErrorComponent
