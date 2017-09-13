@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "",
   "main": "./lib/index",
   "scripts": {
@@ -13,13 +13,14 @@
   "author": "liujian zhang",
   "license": "MIT",
   "dependencies": {
-    "antd": "^2.13.0",
+    "antd": "^2.13.1",
     "classnames": "^2.2.5",
     "echarts-for-react": "^1.4.3",
     "mk-data-table": "^0.6.4",
-    "mk-redbox-react": "^1.0.0",
+    "mk-redbox-react": "^1.0.2",
     "omit.js": "^0.1.0",
     "react": "^15.5.4",
+    "react-codemirror2": "^1.0.0",
     "react-dom": "^15.5.4",
     "react-grid-layout": "^0.15.2",
     "react-json-tree": "^0.10.9",
@@ -45,7 +46,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "style-loader": "^0.18.1",
-    "webpack": "^3.5.5",
+    "webpack": "^3.5.6",
     "webpack-dev-server": "^2.7.1"
   }
 }
