@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.29",
+  "version": "1.0.29-rc.1",
   "description": "",
   "main": "./lib/index",
   "scripts": {
@@ -19,9 +19,9 @@
     "mk-data-table": "^0.6.4",
     "mk-redbox-react": "^1.0.2",
     "omit.js": "^0.1.0",
-    "react": "^15.5.4",
+    "react": "^16.0.0",
     "react-codemirror2": "^1.0.0",
-    "react-dom": "^15.5.4",
+    "react-dom": "^16.0.0",
     "react-grid-layout": "^0.15.2",
     "react-json-tree": "^0.10.9",
     "ziaochina-rc-select": "^0.1.0"
