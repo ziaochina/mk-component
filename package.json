@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.29-rc.1",
+  "version": "1.0.30",
   "description": "",
   "main": "./lib/index",
   "scripts": {
