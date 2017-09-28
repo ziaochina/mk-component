@@ -29,6 +29,15 @@ class DataGridComponent extends React.Component {
             height = dom.offsetHeight,
             width = dom.offsetWidth
         if (height != this.state.height || width != this.state.width) {
+            if (dom.parentElement.offsetHeight
+                && height > dom.parentElement.offsetHeight) {
+                height = dom.parentElement.offsetHeight
+            }
+
+            if (dom.parentElement.offsetWidth
+                && width > dom.parentElement.offsetWidth) {
+                width = dom.parentElement.offsetWidth
+            }
             this.setState({
                 height,
                 width
@@ -62,7 +71,7 @@ class DataGridComponent extends React.Component {
 
     onResize() {
         this.refreshSize()
-        if(this.props.onResize)
+        if (this.props.onResize)
             setTimeout(this.props.onResize, 16)
     }
 
