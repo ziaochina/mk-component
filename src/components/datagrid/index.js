@@ -28,18 +28,31 @@ class DataGridComponent extends React.Component {
         let dom = ReactDOM.findDOMNode(this),
             height = dom.offsetHeight,
             width = dom.offsetWidth
-        if (height != this.state.height || width != this.state.width) {
-            if (dom.parentElement.offsetHeight
-                && height > dom.parentElement.offsetHeight) {
-                height = dom.parentElement.offsetHeight
-            }
 
-            if (dom.parentElement.offsetWidth
-                && width > dom.parentElement.offsetWidth) {
-                width = dom.parentElement.offsetWidth
+        //计算我的最大高度
+        var maxHeight = 0
+        if (dom.parentElement) {
+            maxHeight = dom.parentElement.offsetHeight
+
+            for (let c of dom.parentElement.children) {
+                if (c != dom) {
+                    maxHeight -= c.offsetHeight
+                }
             }
+        }
+
+        if (height != this.state.height || width != this.state.width) {
+
+            height = (maxHeight > 0 && height > maxHeight) ? maxHeight : height
+
             this.setState({
                 height,
+                width
+            })
+        }
+        else if (height > maxHeight && maxHeight > 0) {
+            this.setState({
+                height: maxHeight,
                 width
             })
         }
