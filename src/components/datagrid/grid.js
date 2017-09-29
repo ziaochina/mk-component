@@ -30,7 +30,8 @@ export default function GridComponent(props) {
 		onScrollEnd,
 		scrollToRow,
 		scrollToColumn,
-		columns
+		columns,
+		...other,
 	} = props
 
 	//高度根据行数计算
@@ -52,6 +53,7 @@ export default function GridComponent(props) {
 
 	return (
 		<Table
+			{...other}
 			key={key}
 			rowsCount={(height == 0 || width == 0) ? 0 : rowsCount}
 			headerHeight={headerHeight}
