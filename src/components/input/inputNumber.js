@@ -29,6 +29,10 @@ export default class InputNumberComponent extends Component {
             data.value = props.value + ''
             data.oldValue = data.value
         }
+        else{
+            data.value =  ''
+            data.oldValue = data.value
+        }
 
         if (props.min !== undefined && props.min !== null && props.min !== '' && !isNaN(props.min))
             data.min = props.min
