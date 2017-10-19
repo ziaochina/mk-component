@@ -1,5 +1,5 @@
 import React from 'react'
-import Select from 'ziaochina-rc-select'
+import Select from 'mk-rc-select'
 import classNames from 'classnames'
 
 function SelectComponent(props) {
