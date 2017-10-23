@@ -10,9 +10,9 @@ import {
 } from 'mk-data-table'
 import Cell from './cell'
 import TextCell from './textCell'
+import _ from 'underscore'
 
-
-class DataGridComponent extends React.Component {
+class DataGridComponent extends React.PureComponent {
     state = {
         height: 0,
         width: 0
@@ -22,6 +22,12 @@ class DataGridComponent extends React.Component {
         super(props)
         this.onResize = this.onResize.bind(this)
         this.update = this.update.bind(this)
+        this.setStateDebounce = _.debounce(({ width, height }) => {
+            this.setState({
+                height,
+                width
+            })
+        }, 1)
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -44,14 +50,13 @@ class DataGridComponent extends React.Component {
         if (height != this.state.height || width != this.state.width) {
 
             height = (maxHeight > 0 && height > maxHeight) ? maxHeight : height
-
-            this.setState({
+            this.setStateDebounce({
                 height,
                 width
             })
         }
         else if (height > maxHeight && maxHeight > 0) {
-            this.setState({
+            this.setStateDebounce({
                 height: maxHeight,
                 width
             })
@@ -99,8 +104,7 @@ class DataGridComponent extends React.Component {
         let dom = ReactDOM.findDOMNode(this),
             height = dom.clientHeight,
             width = dom.clientWidth
-
-        this.setState({
+        this.setStateDebounce({
             height,
             width
         })
