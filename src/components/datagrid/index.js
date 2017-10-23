@@ -12,7 +12,7 @@ import Cell from './cell'
 import TextCell from './textCell'
 import _ from 'underscore'
 
-class DataGridComponent extends React.PureComponent {
+class DataGridComponent extends React.Component {
     state = {
         height: 0,
         width: 0
