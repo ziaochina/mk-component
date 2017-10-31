@@ -31,6 +31,8 @@ class DataGridComponent extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        if(this.props.isFix === true) return 
+
         let dom = ReactDOM.findDOMNode(this),
             height = dom.offsetHeight,
             width = dom.offsetWidth
@@ -64,6 +66,7 @@ class DataGridComponent extends React.Component {
     }
 
     componentDidMount() {
+        if(this.props.isFix === true) return  
         this.refreshSize()
 
         var win = window
@@ -77,6 +80,7 @@ class DataGridComponent extends React.Component {
     }
 
     componentWillUnmount() {
+        if(this.props.isFix === true) return  
         var win = window
         if (win.removeEventListener) {
             win.removeEventListener('resize', this.onResize, false)
@@ -116,14 +120,18 @@ class DataGridComponent extends React.Component {
             [this.props.className]: !!this.props.className,
         })
 
+        const width = this.props.isFix ? this.props.width : this.state.width
+        const height = this.props.isFix ? this.props.height : this.state.height
+
+
         return (
             <div className={className}
                 onKeyDown={this.props.onKeyDown}
                 onKeyUp={this.props.onKeyUp}>
                 {Grid({
                     ...omit(this.props, ['className']),
-                    width: this.state.width,
-                    height: this.state.height
+                    width,
+                    height
                 })}
             </div>
         )
