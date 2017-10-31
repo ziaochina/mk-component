@@ -8,7 +8,6 @@ import Viewer from 'react-viewer'
 import classNames from 'classnames'
 const Column = DataGrid.Column
 const Cell = DataGrid.Cell
-import 'react-viewer/dist/index.css'
 
 export default class attachmentComponent extends Component {
     constructor() {
