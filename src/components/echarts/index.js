@@ -1,8 +1,16 @@
 import React from 'react'
 import Echarts from 'echarts-for-react'
-//import './macarons'
-//import './shine'
+import echarts from 'echarts'
+import macarons from './macarons'
+import shine from './shine'
 
-export default function EcharsComponent(props) {
+function EcharsComponent(props) {
 	return <Echarts {...props} />
 }
+
+EcharsComponent.registerTheme = echarts.registerTheme
+
+echarts.registerTheme('shine',shine)
+echarts.registerTheme('macarons',macarons)
+
+export default EcharsComponent

@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.45",
+  "version": "1.0.46",
   "description": "",
   "main": "./lib/index",
   "scripts": {
@@ -15,6 +15,7 @@
   "dependencies": {
     "antd": "^2.13.8",
     "classnames": "^2.2.5",
+    "echarts": "^3.7.2",
     "echarts-for-react": "^1.4.3",
     "mk-data-table": "^0.6.6",
     "mk-rc-select": "^1.0.4",
