@@ -1,6 +1,6 @@
 {
   "name": "mk-component",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "description": "",
   "main": "./lib/index",
   "scripts": {
@@ -17,7 +17,7 @@
     "classnames": "^2.2.5",
     "echarts": "^3.7.2",
     "echarts-for-react": "^1.4.3",
-    "mk-data-table": "^0.6.6",
+    "fixed-data-table-2": "^0.8.6",
     "mk-rc-select": "^1.0.4",
     "mk-redbox-react": "^1.0.2",
     "omit.js": "^0.1.0",

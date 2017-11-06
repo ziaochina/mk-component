@@ -7,7 +7,7 @@ import Grid from './grid'
 import {
     Column,
     ColumnGroup
-} from 'mk-data-table'
+} from 'fixed-data-table-2'
 import Cell from './cell'
 import TextCell from './textCell'
 import _ from 'underscore'

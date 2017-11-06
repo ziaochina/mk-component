@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Cell } from 'mk-data-table'
+import { Cell } from 'fixed-data-table-2'
 import classNames from 'classnames'
 
 export default class cellComponent extends Component {
