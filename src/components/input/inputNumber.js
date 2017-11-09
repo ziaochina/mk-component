@@ -155,9 +155,18 @@ export default class InputNumberComponent extends Component {
         //去除逗号
         value = value.replace(/\,/g, '')
 
+        const isZero = parseFloat(value) === 0 
+
         //第一个字符是0，第二个不是.去除掉0
-        if (value.length > 1 && value.substring(0, 1) == 0 && value.substring(1, 2) != '.') {
+        if (value.length > 1 && value.substring(0, 1) == 0 && value.substring(1, 2) != '.'  && !isZero) {
             value = value.substring(1)
+        }
+
+        if (isZero) {
+            this.currentValue = value + ''
+            this.setState({ value: value + '' })
+            this.state.oldValue != value && this.props.onChange && this.props.onChange(this.toNumber(this.toPrecisionAsStep(value)))
+            return
         }
 
         const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/
