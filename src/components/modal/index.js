@@ -90,6 +90,10 @@ ModalComponent.newInstance = (props) => {
 				}
 
 				const props = properties || {}
+
+				props.cancelText = props.cancelText || '取消'
+				props.okText = props.okText || '确定'
+				
 				document.body.appendChild(div)
 
 				ReactDOM.render(

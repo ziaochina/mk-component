@@ -14,6 +14,9 @@ export default function confirm(props) {
 		props.onOk = handleOk
 		props.onCancel = handleCancel
 
+		props.cancelText = props.cancelText || '取消'
+		props.okText = props.okText || '确定'
+
 		Modal.confirm(props)
 	})
 }
