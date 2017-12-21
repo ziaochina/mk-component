@@ -170,13 +170,16 @@ export default class InputNumberComponent extends Component {
         }
 
         const reg = /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/
-
+        const { step } = this.props
         //是数字或者是空或者是-
         if ((!isNaN(value) && reg.test(value)) || value === '' || value === '-') {
 
             //最后一个字符是不是. 并且 数字不是-
             if (value.charAt(value.length - 1) !== '.' && value !== '-') {
                 value = this.getCurrentValidValue(value)
+                if (this.getStep(value) > this.getStep(step)) {
+                    value = this.toPrecisionAsStep(value)
+                }
                 this.setState({ value: value + '' })
                 this.state.oldValue != value && this.props.onChange && this.props.onChange(this.toNumber(this.toPrecisionAsStep(value)))
             }
@@ -184,6 +187,10 @@ export default class InputNumberComponent extends Component {
                 this.setState({ value: value + '' })
             }
         }
+    }
+    getStep(str) {
+        let strAfterPoint = (str + '').split('.')[1]
+        return strAfterPoint && strAfterPoint.length ? strAfterPoint.length : 0
     }
 
     onBlur() {
