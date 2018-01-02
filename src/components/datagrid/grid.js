@@ -41,8 +41,8 @@ export default function GridComponent(props) {
 
 	columns = [...columns]
 	if (enableSequence) {
-		if(columns.children){
-			columns.children.splice(0, 0, SequenceColumn({
+		if(columns.length > 0 && columns[0].props && columns[0].props.children){
+			columns[0].props.children.splice(0, 0, SequenceColumn({
 				startSequence,
 				enableAddDelrow: readonly === false ? enableAddDelrow : false,
 				footer: sequenceFooter,
