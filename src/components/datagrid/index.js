@@ -10,7 +10,7 @@ import {
 } from 'fixed-data-table-2'
 import Cell from './cell'
 import TextCell from './textCell'
-import _ from 'underscore'
+import _ from 'lodash'
 
 class DataGridComponent extends React.Component {
     state = {
