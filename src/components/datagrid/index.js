@@ -25,13 +25,14 @@ class DataGridComponent extends React.Component {
         this.setStateDebounce = _.debounce(({ width, height }) => {
             this.setState({
                 height,
-                width
+                width,
+                columnWidths: {}
             })
         }, 1)
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(this.props.isFix === true) return 
+        if (this.props.isFix === true) return
 
         let dom = ReactDOM.findDOMNode(this),
             height = dom.offsetHeight,
@@ -66,7 +67,7 @@ class DataGridComponent extends React.Component {
     }
 
     componentDidMount() {
-        if(this.props.isFix === true) return  
+        if (this.props.isFix === true) return
         this.refreshSize()
 
         var win = window
@@ -80,7 +81,7 @@ class DataGridComponent extends React.Component {
     }
 
     componentWillUnmount() {
-        if(this.props.isFix === true) return  
+        if (this.props.isFix === true) return
         var win = window
         if (win.removeEventListener) {
             win.removeEventListener('resize', this.onResize, false)
@@ -113,6 +114,18 @@ class DataGridComponent extends React.Component {
             width
         })
     }
+    onColumnResizeEndCallback = (newColumnWidth, columnKey) => {
+        var newState = {
+            ...this.state,
+            columnWidths: {
+                ...this.state.columnWidths || {},
+                [columnKey]: newColumnWidth
+            }
+        }
+        this.setState(newState)
+    }
+
+
     render() {
         let className = classNames({
             'mk-datagrid': true,
@@ -123,6 +136,33 @@ class DataGridComponent extends React.Component {
         const width = this.props.isFix ? this.props.width : this.state.width
         const height = this.props.isFix ? this.props.height : this.state.height
 
+        const enableResizeColumn = !!this.props.enableResizeColumn
+        var resizeProps = {}, columns = []
+        if (enableResizeColumn) {
+
+            resizeProps = {
+                isColumnResizing: false,
+                onColumnResizeEndCallback: this.onColumnResizeEndCallback
+            }
+
+            this.props.columns && this.props.columns.forEach((c,index) => {
+                if(index < this.props.columns.length -1){
+                    var cw = this.state.columnWidths && this.state.columnWidths[c.props.columnKey]
+                    var p = {
+                        isResizable: c.props.isResizeable === false ? false : true
+                    }
+                    if(cw){
+                        p.width = cw
+                        p.flexGrow = 0
+                    }
+                    c = React.cloneElement(c,p)
+                }
+                columns.push(c)
+            })
+        }
+        else {
+            columns = this.props.columns
+        }
 
         return (
             <div className={className}
@@ -131,7 +171,9 @@ class DataGridComponent extends React.Component {
                 {Grid({
                     ...omit(this.props, ['className']),
                     width,
-                    height
+                    height,
+                    ...resizeProps,
+                    columns
                 })}
             </div>
         )
