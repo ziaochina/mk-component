@@ -114,18 +114,7 @@ class DataGridComponent extends React.Component {
             width
         })
     }
-    onColumnResizeEndCallback = (newColumnWidth, columnKey) => {
-        var newState = {
-            ...this.state,
-            columnWidths: {
-                ...this.state.columnWidths || {},
-                [columnKey]: newColumnWidth
-            }
-        }
-        this.setState(newState)
-    }
-
-
+   
     render() {
         let className = classNames({
             'mk-datagrid': true,
@@ -138,16 +127,15 @@ class DataGridComponent extends React.Component {
 
         const enableResizeColumn = !!this.props.enableResizeColumn
         var resizeProps = {}, columns = []
-        if (enableResizeColumn) {
-
+        if (enableResizeColumn && this.props.onColumnResizeEndCallback) {
             resizeProps = {
                 isColumnResizing: false,
-                onColumnResizeEndCallback: this.onColumnResizeEndCallback
+                onColumnResizeEndCallback: this.props.onColumnResizeEndCallback
             }
 
             this.props.columns && this.props.columns.forEach((c,index) => {
                 if(index < this.props.columns.length -1){
-                    var cw = this.state.columnWidths && this.state.columnWidths[c.props.columnKey]
+                    var cw = this.props.columnWidths && this.props.columnWidths[c.props.columnKey]
                     var p = {
                         isResizable: c.props.isResizeable === false ? false : true
                     }
