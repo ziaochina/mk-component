@@ -1,39 +1,32 @@
-var webpack = require("webpack")
-var path = require("path")
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var packCSS = new ExtractTextPlugin('./mk-component.min.css')
+const webpack = require("webpack"),
+    path = require("path"),
+    env = process.env.NODE_ENV
 
-var env = process.env.NODE_ENV
-var compress = process.env.COMPRESS
-
-var plugins = []
-
-plugins.push(new webpack.DefinePlugin({
-    "process.env.NODE_ENV": JSON.stringify(env)
-}))
-
-if (env === 'production' && compress) {
-    plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false
-            }
-        })
-    )
-}
-
-plugins.push(packCSS)
-
-plugins.push(new CopyWebpackPlugin([{
-    context: './src/assets',
-    from: '**/*',
-    to: 'assets'
-}]))
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
+    mode: env || 'development',
+    optimization: {
+        minimizer: env === 'production' ? [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: false
+            })
+        ] : []
+    },
+    devtool: env === 'production' ? undefined : 'source-map',
+    plugins: [
+        new CopyWebpackPlugin([{
+            context: './src/assets',
+            from: '**/*',
+            to: 'assets'
+        }])
+    ],
     entry: ["./src/index.js", "./src/assets/style/index.less"],
-
     output: {
         path: path.join(__dirname, "/dist/"),
         library: "MKComponent",
@@ -80,11 +73,6 @@ module.exports = {
                     limit: 8192
                 }
             }
-        }],
-    },
-    plugins: plugins
-}
-
-if (env === 'development') {
-    module.exports.devtool = 'source-map'
+        }]
+    }
 }
